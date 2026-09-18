@@ -154,7 +154,7 @@ function App() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#login"
+                  href="https://1xbet.tz/en"
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#16c784] px-6 py-3.5 font-bold text-black transition hover:bg-[#20e094]"
                 >
                   Register
