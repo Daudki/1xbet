@@ -20,10 +20,10 @@ import { useLang } from "./LanguageContext";
 
 const PROMO_CODE = "DNA63";
 
-const REGISTER_URL = `https://1xbet.tz/en/registration?type=phone&bonus=SPORT&currency=TZS&promo=${encodeURIComponent(
+const REGISTER_URL = `https://melbet-99601.pro/en/registration?tag=d_4407497m_66335c_&type=phone&bonus=SPORT&currency=TZS&promo=${encodeURIComponent(
   PROMO_CODE
 )}`;
-const LOGIN_URL = "https://1xbet.tz/en/user/login";
+const LOGIN_URL = "https://melbet-99601.pro/en/user/login";
 
 function App() {
   const { t, lang, setLang } = useLang();
@@ -46,7 +46,7 @@ function App() {
       try {
         document.execCommand("copy");
       } catch {
-        // ignore — worst case, user types it manually
+        // ignore
       }
       document.body.removeChild(el);
     }
@@ -78,17 +78,17 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#05080f] text-white">
+    <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#05080f]/90 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/90 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0a5cff] font-black text-white">
-              1X
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#b8400e] font-black text-white">
+              MB
             </div>
             <span className="text-xl font-black tracking-tight">
-              1x<span className="text-[#0a5cff]">BET</span>
+              MEL<span className="text-[#e07a1f]">BET</span>
             </span>
           </a>
 
@@ -126,7 +126,7 @@ function App() {
             </a>
             <a
               href={REGISTER_URL}
-              className="rounded-lg bg-[#0a5cff] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#1e6dff]"
+              className="rounded-lg bg-[#b8400e] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#d94e12]"
             >
               {t.header.register}
             </a>
@@ -154,7 +154,7 @@ function App() {
 
         {/* Mobile nav */}
         {menuOpen && (
-          <div className="border-t border-white/10 bg-[#05080f] px-5 py-5 md:hidden">
+          <div className="border-t border-white/10 bg-[#0a0a0a] px-5 py-5 md:hidden">
             <nav className="flex flex-col gap-5">
               <a onClick={closeMenu} href="#sports">
                 {t.nav.sports}
@@ -179,7 +179,7 @@ function App() {
               <a
                 onClick={closeMenu}
                 href={REGISTER_URL}
-                className="rounded-lg bg-[#0a5cff] px-5 py-3 text-center font-bold text-white"
+                className="rounded-lg bg-[#b8400e] px-5 py-3 text-center font-bold text-white"
               >
                 {t.header.register}
               </a>
@@ -191,19 +191,19 @@ function App() {
       <main>
         {/* Hero */}
         <section id="home" className="relative overflow-hidden">
-          <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#0a5cff]/10 blur-3xl" />
-          <div className="pointer-events-none absolute -right-40 top-20 h-80 w-80 rounded-full bg-[#0a5cff]/10 blur-3xl" />
+          <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#b8400e]/15 blur-3xl" />
+          <div className="pointer-events-none absolute -right-40 top-20 h-80 w-80 rounded-full bg-[#e07a1f]/10 blur-3xl" />
 
           <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
             <div>
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#0a5cff]/20 bg-[#0a5cff]/10 px-3 py-1.5 text-xs font-semibold text-[#0a5cff]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0a5cff]" />
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#e07a1f]/30 bg-[#e07a1f]/10 px-3 py-1.5 text-xs font-semibold text-[#e07a1f]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#e07a1f]" />
                 {t.hero.badge}
               </div>
 
               <h1 className="max-w-2xl text-5xl font-black leading-[1.02] tracking-tight sm:text-6xl">
                 {t.hero.title}
-                <span className="text-[#0a5cff]">{t.hero.titleAccent}</span>
+                <span className="text-[#e07a1f]">{t.hero.titleAccent}</span>
               </h1>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-white/60">
@@ -213,7 +213,7 @@ function App() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={REGISTER_URL}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0a5cff] px-6 py-3.5 font-bold text-white transition hover:bg-[#1e6dff]"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#b8400e] px-6 py-3.5 font-bold text-white transition hover:bg-[#d94e12]"
                 >
                   {t.hero.register}
                   <ArrowRight size={18} />
@@ -235,8 +235,8 @@ function App() {
 
             {/* Hero visual */}
             <div className="relative">
-              <div className="rounded-3xl border border-white/10 bg-[#0a0f18] p-4 shadow-2xl shadow-black/40">
-                <div className="rounded-2xl border border-white/10 bg-[#0d1420] p-5">
+              <div className="rounded-3xl border border-white/10 bg-[#141414] p-4 shadow-2xl shadow-black/40">
+                <div className="rounded-2xl border border-white/10 bg-[#1a1a1a] p-5">
                   <div className="mb-6 flex items-center justify-between">
                     <div>
                       <p className="text-xs text-white/40">
@@ -249,7 +249,7 @@ function App() {
                     </span>
                   </div>
 
-                  <div className="rounded-xl bg-[#070c14] p-5">
+                  <div className="rounded-xl bg-[#0e0e0e] p-5">
                     <div className="flex items-center justify-between text-sm">
                       <span>Manchester</span>
                       <span className="font-bold">2</span>
@@ -267,7 +267,7 @@ function App() {
                         key={item}
                         className={`rounded-lg border p-3 text-center ${
                           index === 0
-                            ? "border-[#0a5cff]/40 bg-[#0a5cff]/10 text-[#0a5cff]"
+                            ? "border-[#b8400e]/60 bg-[#b8400e]/15 text-[#e07a1f]"
                             : "border-white/10 bg-white/[0.02]"
                         }`}
                       >
@@ -289,11 +289,11 @@ function App() {
         {/* Promotions */}
         <section
           id="promotions"
-          className="border-y border-white/10 bg-[#070c14]"
+          className="border-y border-white/10 bg-[#0f0f0f]"
         >
           <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
             <div className="max-w-2xl">
-              <p className="text-sm font-bold uppercase tracking-widest text-[#0a5cff]">
+              <p className="text-sm font-bold uppercase tracking-widest text-[#e07a1f]">
                 {t.promotions.label}
               </p>
               <h2 className="mt-3 text-3xl font-black sm:text-4xl">
@@ -304,8 +304,8 @@ function App() {
 
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               {/* Promo code card */}
-              <div className="rounded-2xl border border-[#0a5cff]/20 bg-[#0a5cff]/[0.05] p-7">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0a5cff]/10 text-[#0a5cff]">
+              <div className="rounded-2xl border border-[#b8400e]/30 bg-[#b8400e]/[0.06] p-7">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#b8400e]/20 text-[#e07a1f]">
                   <Gift size={22} />
                 </div>
 
@@ -317,14 +317,14 @@ function App() {
                   {t.promotions.codeText}
                 </p>
 
-                <div className="mt-6 flex items-center gap-3 rounded-xl border border-dashed border-[#0a5cff]/40 bg-black/30 p-4">
+                <div className="mt-6 flex items-center gap-3 rounded-xl border border-dashed border-[#e07a1f]/40 bg-black/30 p-4">
                   <span className="font-mono text-xl font-black tracking-[0.2em] text-white">
                     {PROMO_CODE}
                   </span>
 
                   <button
                     onClick={copyCode}
-                    className="ml-auto flex items-center gap-1.5 rounded-lg bg-[#0a5cff] px-4 py-2.5 text-xs font-bold text-white transition hover:bg-[#1e6dff] active:scale-95"
+                    className="ml-auto flex items-center gap-1.5 rounded-lg bg-[#b8400e] px-4 py-2.5 text-xs font-bold text-white transition hover:bg-[#d94e12] active:scale-95"
                   >
                     {copied ? (
                       <>
@@ -361,7 +361,7 @@ function App() {
 
                 <a
                   href={REGISTER_URL}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#0a5cff]"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#e07a1f]"
                 >
                   {t.promotions.registerNow}
                   <ArrowRight size={16} />
@@ -375,7 +375,7 @@ function App() {
         <section id="sports">
           <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
             <div className="text-center">
-              <p className="text-sm font-bold uppercase tracking-widest text-[#0a5cff]">
+              <p className="text-sm font-bold uppercase tracking-widest text-[#e07a1f]">
                 {t.features.label}
               </p>
               <h2 className="mt-3 text-3xl font-black sm:text-4xl">
@@ -389,9 +389,9 @@ function App() {
                 return (
                   <div
                     key={feature.title}
-                    className="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition hover:-translate-y-1 hover:border-[#0a5cff]/30"
+                    className="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition hover:-translate-y-1 hover:border-[#b8400e]/40"
                   >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0a5cff]/10 text-[#0a5cff]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#b8400e]/15 text-[#e07a1f]">
                       <Icon size={21} />
                     </div>
                     <h3 className="mt-5 font-bold">{feature.title}</h3>
@@ -406,11 +406,11 @@ function App() {
         </section>
 
         {/* Responsible gaming */}
-        <section id="casino" className="border-y border-white/10 bg-[#070c14]">
+        <section id="casino" className="border-y border-white/10 bg-[#0f0f0f]">
           <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-7 sm:p-10">
               <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#0a5cff]/10 text-[#0a5cff]">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#b8400e]/15 text-[#e07a1f]">
                   <ShieldCheck size={24} />
                 </div>
                 <div>
@@ -430,7 +430,7 @@ function App() {
         <section>
           <div className="mx-auto max-w-3xl px-5 py-16">
             <div className="mb-8 text-center">
-              <CircleHelp className="mx-auto text-[#0a5cff]" size={28} />
+              <CircleHelp className="mx-auto text-[#e07a1f]" size={28} />
               <h2 className="mt-3 text-3xl font-black">{t.faq.title}</h2>
             </div>
 
@@ -477,16 +477,16 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-[#03060b]">
+      <footer className="border-t border-white/10 bg-[#050505]">
         <div className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#0a5cff] text-xs font-black text-white">
-                  1X
+                <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#b8400e] text-xs font-black text-white">
+                  MB
                 </div>
                 <span className="font-black">
-                  1x<span className="text-[#0a5cff]">BET</span>
+                  MEL<span className="text-[#e07a1f]">BET</span>
                 </span>
               </div>
               <p className="mt-3 text-xs text-white/30">
@@ -511,7 +511,7 @@ function App() {
           </div>
 
           <div className="mt-8 border-t border-white/5 pt-6 text-xs text-white/20">
-            © {new Date().getFullYear()} 1xBet. {t.footer.rights}
+            © {new Date().getFullYear()} MelBet. {t.footer.rights}
           </div>
         </div>
       </footer>
@@ -520,7 +520,7 @@ function App() {
       <div className="fixed bottom-4 left-4 right-4 z-40 md:hidden">
         <a
           href={REGISTER_URL}
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0a5cff] px-5 py-3.5 font-bold text-white shadow-xl shadow-black/50 transition hover:bg-[#1e6dff]"
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#b8400e] px-5 py-3.5 font-bold text-white shadow-xl shadow-black/50 transition hover:bg-[#d94e12]"
         >
           <Smartphone size={18} />
           {t.mobileCta}

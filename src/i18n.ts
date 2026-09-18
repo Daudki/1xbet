@@ -88,7 +88,7 @@ export const translations: Record<Lang, Dict> = {
       register: "Бүртгүүлэх",
     },
     hero: {
-      badge: "1xBet Монгол",
+      badge: "MelBet Монгол",
       title: "Үйл явдлын",
       titleAccent: " дээр тогло.",
       subtitle:
@@ -144,10 +144,10 @@ export const translations: Record<Lang, Dict> = {
       title: "Тусламж хэрэгтэй юу?",
       loginQ: "Хэрхэн нэвтрэх вэ?",
       loginA:
-        "Энэ хуудасны дээд хэсэгт байрлах Нэвтрэх товчийг дарж, 1xBet-ийн албан ёсны нэвтрэх хуудас руу шилжинэ үү.",
+        "Энэ хуудасны дээд хэсэгт байрлах Нэвтрэх товчийг дарж, MelBet-ийн албан ёсны нэвтрэх хуудас руу шилжинэ үү.",
       promoQ: "Промо кодыг хаана ашиглах вэ?",
       promoA:
-        "Бүртгүүлэх үед промо кодын талбарт ARHAMU04 кодыг оруулна уу. Хуулах товчийг ашиглавал хялбар.",
+        "Бүртгүүлэх үед промо кодын талбарт DNA63 кодыг оруулна уу. Хуулах товчийг ашиглавал хялбар.",
       liveQ: "Тоглолтын үед бооцоо тавьж болох уу?",
       liveA: "Шууд бооцоо нь тохирох спортын үйл явдлуудад боломжтой.",
     },
@@ -173,7 +173,7 @@ export const translations: Record<Lang, Dict> = {
       register: "Register",
     },
     hero: {
-      badge: "1xBet Mongolia",
+      badge: "MelBet Mongolia",
       title: "Bet on the",
       titleAccent: " action.",
       subtitle:
@@ -229,10 +229,10 @@ export const translations: Record<Lang, Dict> = {
       title: "Need help?",
       loginQ: "How do I log in?",
       loginA:
-        "Click the Log In button at the top of this page to be taken directly to the official 1xBet login page.",
+        "Click the Log In button at the top of this page to be taken directly to the official MelBet login page.",
       promoQ: "Where do I use the promo code?",
       promoA:
-        "Enter ARHAMU04 into the promo code field during registration. Use the copy button for convenience.",
+        "Enter DNA63 into the promo code field during registration. Use the copy button for convenience.",
       liveQ: "Can I bet while an event is live?",
       liveA: "Live betting may be available for eligible sporting events.",
     },
