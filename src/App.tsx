@@ -14,6 +14,14 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
+const REGISTER_URL =
+  "https://1xbet.tz/en/registration?type=phone&bonus=SPORT&currency=TZS";
+const LOGIN_URL = "https://1xbet.tz/en/user/login";
+
+const goTo = (url: string) => {
+  window.location.href = url;
+};
+
 const features = [
   {
     icon: Trophy,
@@ -47,18 +55,18 @@ function App() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className="min-h-screen bg-[#070b09] text-white">
+    <div className="min-h-screen bg-[#05080f] text-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#070b09]/90 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#05080f]/90 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#16c784] font-black text-black">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0a5cff] font-black text-white">
               1X
             </div>
 
             <span className="text-xl font-black tracking-tight">
-              1x<span className="text-[#16c784]">BET</span>
+              1x<span className="text-[#0a5cff]">BET</span>
             </span>
           </a>
 
@@ -76,15 +84,21 @@ function App() {
             <a href="#promotions" className="nav-link">
               Promotions
             </a>
-            <a href="#login" className="nav-link">
-              How to Login
-            </a>
           </nav>
 
-          <div className="hidden md:block">
-            <a href="#login" className="rounded-lg bg-[#16c784] px-5 py-2.5 text-sm font-bold text-black transition hover:bg-[#20e094]">
+          <div className="hidden items-center gap-3 md:flex">
+            <button
+              onClick={() => goTo(LOGIN_URL)}
+              className="rounded-lg border border-white/15 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white/5"
+            >
               Log In
-            </a>
+            </button>
+            <button
+              onClick={() => goTo(REGISTER_URL)}
+              className="rounded-lg bg-[#0a5cff] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#1e6dff]"
+            >
+              Register
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -99,7 +113,7 @@ function App() {
 
         {/* Mobile nav */}
         {menuOpen && (
-          <div className="border-t border-white/10 bg-[#070b09] px-5 py-5 md:hidden">
+          <div className="border-t border-white/10 bg-[#05080f] px-5 py-5 md:hidden">
             <nav className="flex flex-col gap-5">
               <a onClick={closeMenu} href="#sports">
                 Sports
@@ -113,17 +127,26 @@ function App() {
               <a onClick={closeMenu} href="#promotions">
                 Promotions
               </a>
-              <a onClick={closeMenu} href="#login">
-                How to Login
-              </a>
 
-              <a
-                onClick={closeMenu}
-                href="#login"
-                className="rounded-lg bg-[#16c784] px-5 py-3 text-center font-bold text-black"
+              <button
+                onClick={() => {
+                  closeMenu();
+                  goTo(LOGIN_URL);
+                }}
+                className="rounded-lg border border-white/15 px-5 py-3 text-center font-bold text-white"
               >
                 Log In
-              </a>
+              </button>
+
+              <button
+                onClick={() => {
+                  closeMenu();
+                  goTo(REGISTER_URL);
+                }}
+                className="rounded-lg bg-[#0a5cff] px-5 py-3 text-center font-bold text-white"
+              >
+                Register
+              </button>
             </nav>
           </div>
         )}
@@ -132,19 +155,19 @@ function App() {
       <main>
         {/* Hero */}
         <section id="home" className="relative overflow-hidden">
-          <div className="absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#16c784]/10 blur-3xl" />
-          <div className="absolute -right-40 top-20 h-80 w-80 rounded-full bg-[#16c784]/10 blur-3xl" />
+          <div className="absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#0a5cff]/10 blur-3xl" />
+          <div className="absolute -right-40 top-20 h-80 w-80 rounded-full bg-[#0a5cff]/10 blur-3xl" />
 
           <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
             <div>
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#16c784]/20 bg-[#16c784]/10 px-3 py-1.5 text-xs font-semibold text-[#16c784]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#16c784]" />
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#0a5cff]/20 bg-[#0a5cff]/10 px-3 py-1.5 text-xs font-semibold text-[#0a5cff]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#0a5cff]" />
                 1xBet Tanzania
               </div>
 
               <h1 className="max-w-2xl text-5xl font-black leading-[1.02] tracking-tight sm:text-6xl">
                 Bet on the
-                <span className="text-[#16c784]"> action.</span>
+                <span className="text-[#0a5cff]"> action.</span>
               </h1>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-white/60">
@@ -153,21 +176,21 @@ function App() {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="https://1xbet.tz/en"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#16c784] px-6 py-3.5 font-bold text-black transition hover:bg-[#20e094]"
+                <button
+                  onClick={() => goTo(REGISTER_URL)}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0a5cff] px-6 py-3.5 font-bold text-white transition hover:bg-[#1e6dff]"
                 >
                   Register
                   <ArrowRight size={18} />
-                </a>
+                </button>
 
-                <a
-                  href="#login"
+                <button
+                  onClick={() => goTo(LOGIN_URL)}
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-6 py-3.5 font-bold transition hover:bg-white/5"
                 >
                   <LogIn size={18} />
                   Log In
-                </a>
+                </button>
               </div>
 
               <p className="mt-5 text-xs text-white/35">
@@ -177,8 +200,8 @@ function App() {
 
             {/* Hero visual */}
             <div className="relative">
-              <div className="rounded-3xl border border-white/10 bg-[#0d1310] p-4 shadow-2xl shadow-black/40">
-                <div className="rounded-2xl border border-white/10 bg-[#101713] p-5">
+              <div className="rounded-3xl border border-white/10 bg-[#0a0f18] p-4 shadow-2xl shadow-black/40">
+                <div className="rounded-2xl border border-white/10 bg-[#0d1420] p-5">
                   <div className="mb-6 flex items-center justify-between">
                     <div>
                       <p className="text-xs text-white/40">LIVE</p>
@@ -190,7 +213,7 @@ function App() {
                     </span>
                   </div>
 
-                  <div className="rounded-xl bg-[#0a0f0c] p-5">
+                  <div className="rounded-xl bg-[#070c14] p-5">
                     <div className="flex items-center justify-between text-sm">
                       <span>Manchester</span>
                       <span className="font-bold">2</span>
@@ -210,7 +233,7 @@ function App() {
                         key={item}
                         className={`rounded-lg border p-3 text-center ${
                           index === 0
-                            ? "border-[#16c784]/40 bg-[#16c784]/10 text-[#16c784]"
+                            ? "border-[#0a5cff]/40 bg-[#0a5cff]/10 text-[#0a5cff]"
                             : "border-white/10 bg-white/[0.02]"
                         }`}
                       >
@@ -230,11 +253,11 @@ function App() {
         {/* Promotions */}
         <section
           id="promotions"
-          className="border-y border-white/10 bg-[#0a0f0c]"
+          className="border-y border-white/10 bg-[#070c14]"
         >
           <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
             <div className="max-w-2xl">
-              <p className="text-sm font-bold uppercase tracking-widest text-[#16c784]">
+              <p className="text-sm font-bold uppercase tracking-widest text-[#0a5cff]">
                 Promotions
               </p>
 
@@ -250,8 +273,8 @@ function App() {
 
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               {/* Promo code */}
-              <div className="rounded-2xl border border-[#16c784]/20 bg-[#16c784]/[0.05] p-7">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#16c784]/10 text-[#16c784]">
+              <div className="rounded-2xl border border-[#0a5cff]/20 bg-[#0a5cff]/[0.05] p-7">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0a5cff]/10 text-[#0a5cff]">
                   <Gift size={22} />
                 </div>
 
@@ -287,13 +310,13 @@ function App() {
                   wagering requirements and other conditions apply.
                 </p>
 
-                <a
-                  href="#login"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#16c784]"
+                <button
+                  onClick={() => goTo(REGISTER_URL)}
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#0a5cff]"
                 >
-                  Learn how to register
+                  Register now
                   <ArrowRight size={16} />
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -303,7 +326,7 @@ function App() {
         <section id="sports">
           <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
             <div className="text-center">
-              <p className="text-sm font-bold uppercase tracking-widest text-[#16c784]">
+              <p className="text-sm font-bold uppercase tracking-widest text-[#0a5cff]">
                 Features
               </p>
 
@@ -319,9 +342,9 @@ function App() {
                 return (
                   <div
                     key={feature.title}
-                    className="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition hover:-translate-y-1 hover:border-[#16c784]/30"
+                    className="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition hover:-translate-y-1 hover:border-[#0a5cff]/30"
                   >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#16c784]/10 text-[#16c784]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0a5cff]/10 text-[#0a5cff]">
                       <Icon size={21} />
                     </div>
 
@@ -337,81 +360,12 @@ function App() {
           </div>
         </section>
 
-        {/* Login instructions */}
-        <section
-          id="login"
-          className="border-y border-white/10 bg-[#0a0f0c]"
-        >
-          <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-              <div>
-                <p className="text-sm font-bold uppercase tracking-widest text-[#16c784]">
-                  How to log in
-                </p>
-
-                <h2 className="mt-3 text-3xl font-black sm:text-4xl">
-                  Access your account in three steps
-                </h2>
-
-                <p className="mt-4 leading-7 text-white/50">
-                  Use the official 1xBet website or application and keep your
-                  login credentials private.
-                </p>
-
-                <a
-                  href="#home"
-                  className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#16c784] px-6 py-3.5 font-bold text-black"
-                >
-                  Open 1xBet
-                  <ArrowRight size={18} />
-                </a>
-              </div>
-
-              <div className="space-y-4">
-                {[
-                  {
-                    number: "01",
-                    title: "Open the official platform",
-                    text: "Visit the official website or open the official app.",
-                  },
-                  {
-                    number: "02",
-                    title: "Select Log In",
-                    text: "Tap or click the Log In button to open the login form.",
-                  },
-                  {
-                    number: "03",
-                    title: "Enter your credentials",
-                    text: "Enter your registered details and complete any required verification.",
-                  },
-                ].map((step) => (
-                  <div
-                    key={step.number}
-                    className="flex gap-5 rounded-2xl border border-white/10 bg-white/[0.02] p-5"
-                  >
-                    <div className="font-mono text-sm font-bold text-[#16c784]">
-                      {step.number}
-                    </div>
-
-                    <div>
-                      <h3 className="font-bold">{step.title}</h3>
-                      <p className="mt-1 text-sm leading-6 text-white/45">
-                        {step.text}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Responsible gaming */}
-        <section id="casino">
+        <section id="casino" className="border-y border-white/10 bg-[#070c14]">
           <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-7 sm:p-10">
               <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#16c784]/10 text-[#16c784]">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#0a5cff]/10 text-[#0a5cff]">
                   <ShieldCheck size={24} />
                 </div>
 
@@ -435,7 +389,7 @@ function App() {
         <section>
           <div className="mx-auto max-w-3xl px-5 py-16">
             <div className="mb-8 text-center">
-              <CircleHelp className="mx-auto text-[#16c784]" size={28} />
+              <CircleHelp className="mx-auto text-[#0a5cff]" size={28} />
 
               <h2 className="mt-3 text-3xl font-black">
                 Need help?
@@ -449,8 +403,8 @@ function App() {
               </summary>
 
               <p className="mt-4 text-sm leading-6 text-white/45">
-                Open the official platform, select Log In and enter your
-                registered credentials.
+                Click the Log In button at the top of this page to be taken
+                directly to the official 1xBet Tanzania login page.
               </p>
             </details>
 
@@ -481,17 +435,17 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-[#050806]">
+      <footer className="border-t border-white/10 bg-[#03060b]">
         <div className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#16c784] text-xs font-black text-black">
+                <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#0a5cff] text-xs font-black text-white">
                   1X
                 </div>
 
                 <span className="font-black">
-                  1x<span className="text-[#16c784]">BET</span>
+                  1x<span className="text-[#0a5cff]">BET</span>
                 </span>
               </div>
 
@@ -506,9 +460,6 @@ function App() {
               </a>
               <a href="#promotions" className="hover:text-white">
                 Promotions
-              </a>
-              <a href="#login" className="hover:text-white">
-                How to Login
               </a>
               <a href="#casino" className="hover:text-white">
                 Responsible Gaming
@@ -527,13 +478,13 @@ function App() {
 
       {/* Floating mobile CTA */}
       <div className="fixed bottom-4 left-4 right-4 z-40 md:hidden">
-        <a
-          href="#login"
-          className="flex items-center justify-center gap-2 rounded-xl bg-[#16c784] px-5 py-3.5 font-bold text-black shadow-xl shadow-black/50"
+        <button
+          onClick={() => goTo(REGISTER_URL)}
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0a5cff] px-5 py-3.5 font-bold text-white shadow-xl shadow-black/50 transition hover:bg-[#1e6dff]"
         >
           <Smartphone size={18} />
           Register / Log In
-        </a>
+        </button>
       </div>
     </div>
   );
