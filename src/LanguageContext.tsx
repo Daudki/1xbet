@@ -5,23 +5,21 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { translations, type Lang } from "./i18n";
+import { translations, type Dict, type Lang } from "./i18n";
 
 type Ctx = {
   lang: Lang;
   setLang: (l: Lang) => void;
-  t: (typeof translations)["mn"];
+  t: Dict;
 };
 
 const LanguageContext = createContext<Ctx | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>(() => {
-    const saved =
-      typeof window !== "undefined"
-        ? (localStorage.getItem("lang") as Lang | null)
-        : null;
-    return saved === "en" || saved === "mn" ? saved : "mn"; // Mongolian default
+    if (typeof window === "undefined") return "mn";
+    const saved = localStorage.getItem("lang");
+    return saved === "en" || saved === "mn" ? saved : "mn";
   });
 
   const setLang = (l: Lang) => {

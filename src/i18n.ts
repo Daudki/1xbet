@@ -1,6 +1,81 @@
 export type Lang = "mn" | "en";
 
-export const translations = {
+export type Dict = {
+  nav: {
+    sports: string;
+    live: string;
+    casino: string;
+    promotions: string;
+  };
+  header: {
+    login: string;
+    register: string;
+  };
+  hero: {
+    badge: string;
+    title: string;
+    titleAccent: string;
+    subtitle: string;
+    register: string;
+    login: string;
+    responsible: string;
+  };
+  liveCard: {
+    live: string;
+    football: string;
+    odds: string;
+  };
+  promotions: {
+    label: string;
+    title: string;
+    subtitle: string;
+    codeTitle: string;
+    codeText: string;
+    codeLabel: string;
+    copy: string;
+    copied: string;
+    useCode: string;
+    welcomeTitle: string;
+    welcomeText: string;
+    registerNow: string;
+  };
+  features: {
+    label: string;
+    title: string;
+    sports: string;
+    sportsDesc: string;
+    liveBetting: string;
+    liveDesc: string;
+    casino: string;
+    casinoDesc: string;
+    promotions: string;
+    promotionsDesc: string;
+  };
+  responsible: {
+    title: string;
+    text: string;
+  };
+  faq: {
+    title: string;
+    loginQ: string;
+    loginA: string;
+    promoQ: string;
+    promoA: string;
+    liveQ: string;
+    liveA: string;
+  };
+  footer: {
+    home: string;
+    promotions: string;
+    responsible: string;
+    terms: string;
+    responsibleNote: string;
+    rights: string;
+  };
+  mobileCta: string;
+};
+
+export const translations: Record<Lang, Dict> = {
   mn: {
     nav: {
       sports: "Спорт",
@@ -171,4 +246,4 @@ export const translations = {
     },
     mobileCta: "Register / Log In",
   },
-} as const;
+};
