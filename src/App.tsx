@@ -18,7 +18,7 @@ import {
 import { useState } from "react";
 import { useLang } from "./LanguageContext";
 
-const PROMO_CODE = "ARHAMU04";
+const PROMO_CODE = "DNA63";
 
 const REGISTER_URL = `https://1xbet.tz/en/registration?type=phone&bonus=SPORT&currency=TZS&promo=${encodeURIComponent(
   PROMO_CODE
